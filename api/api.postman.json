@@ -7,19 +7,19 @@
 	},
 	"item": [
 		{
-			"name": "Cars",
+			"name": "Shipments",
 			"item": [
 				{
 					"name": "Msgs",
 					"item": [
 						{
-							"name": "Add Car Msg",
+							"name": "Add Shipment Msg",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"txt\": \"Like this car\"\n}",
+									"raw": "{\n    \"txt\": \"Like this shipment\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -27,7 +27,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3030/api/car/669145477ed386ad1a905074/msg",
+									"raw": "http://localhost:3030/api/shipment/669145477ed386ad1a905074/msg",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -35,7 +35,7 @@
 									"port": "3030",
 									"path": [
 										"api",
-										"car",
+										"shipment",
 										"669145477ed386ad1a905074",
 										"msg"
 									]
@@ -44,13 +44,13 @@
 							"response": []
 						},
 						{
-							"name": "Remove Car Msg",
+							"name": "Remove Shipment Msg",
 							"request": {
 								"method": "DELETE",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"txt\": \"Like this car\"\n}",
+									"raw": "{\n    \"txt\": \"Like this shipment\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -58,7 +58,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3030/api/car/669145477ed386ad1a905074/msg/66HyQ",
+									"raw": "http://localhost:3030/api/shipment/669145477ed386ad1a905074/msg/66HyQ",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -66,7 +66,7 @@
 									"port": "3030",
 									"path": [
 										"api",
-										"car",
+										"shipment",
 										"669145477ed386ad1a905074",
 										"msg",
 										"66HyQ"
@@ -78,12 +78,12 @@
 					]
 				},
 				{
-					"name": "Get Cars",
+					"name": "Get Shipments",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3030/api/car/",
+							"raw": "http://localhost:3030/api/shipment/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -91,7 +91,7 @@
 							"port": "3030",
 							"path": [
 								"api",
-								"car",
+								"shipment",
 								""
 							]
 						}
@@ -99,12 +99,12 @@
 					"response": []
 				},
 				{
-					"name": "Get Car",
+					"name": "Get Shipment",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3030/api/car/658c02a1cce9d0d09bcabe8e",
+							"raw": "http://localhost:3030/api/shipment/658c02a1cce9d0d09bcabe8e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -112,7 +112,7 @@
 							"port": "3030",
 							"path": [
 								"api",
-								"car",
+								"shipment",
 								"658c02a1cce9d0d09bcabe8e"
 							]
 						}
@@ -120,12 +120,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Car",
+					"name": "Delete Shipment",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3030/api/car/658c02a1cce9d0d09bcabe8e",
+							"raw": "http://localhost:3030/api/shipment/658c02a1cce9d0d09bcabe8e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -133,7 +133,7 @@
 							"port": "3030",
 							"path": [
 								"api",
-								"car",
+								"shipment",
 								"658c02a1cce9d0d09bcabe8e"
 							]
 						}
@@ -141,7 +141,7 @@
 					"response": []
 				},
 				{
-					"name": "Add Car",
+					"name": "Add Shipment",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -155,7 +155,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/api/car",
+							"raw": "http://localhost:3030/api/shipment",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -163,14 +163,14 @@
 							"port": "3030",
 							"path": [
 								"api",
-								"car"
+								"shipment"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update Car",
+					"name": "Update Shipment",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -184,7 +184,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/api/car/669145477ed386ad1a905074",
+							"raw": "http://localhost:3030/api/shipment/669145477ed386ad1a905074",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -192,7 +192,7 @@
 							"port": "3030",
 							"path": [
 								"api",
-								"car",
+								"shipment",
 								"669145477ed386ad1a905074"
 							]
 						}
