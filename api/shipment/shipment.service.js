@@ -143,3 +143,55 @@ function _buildSort(filterBy) {
 	if (!filterBy.sortField) return {}
 	return { [filterBy.sortField]: filterBy.sortDir }
 }
+
+
+function isShipmentAtRisk(shipmentData) {
+	const currentTime = new Date().getTime()
+
+	const transportHasntBegun = !shipmentData.shipment_on_its_way
+	const timeForTransportToBegin = calculateTimeForTransportToBegin(shipmentData)
+	const transportShouldBegin = currentTime >= timeForTransportToBegin
+
+	const orderNotReady = !shipmentData.order_ready_to_ship
+	const timeForOrderToBeReady = calculateTimeForOrderToBeReady(shipmentData)
+	const orderShouldBeReady = currentTime >= timeForOrderToBeReady
+
+	if (transportHasntBegun && transportShouldBegin) {
+		return true
+	} else if (orderNotReady && orderShouldBeReady) {
+		return true
+	} else {
+		return false
+	}
+
+}
+
+function calculateTimeForOrderToBeReady(shipmentData) {
+	const timeForTransportToBegin = calculateTimeForTransportToBegin(shipmentData)
+	const timeForOrderToBeReady = timeForTransportToBegin - timeFromReadyToTransport(shipmentData)
+
+	return timeForOrderToBeReady
+}
+
+function timeFromReadyToTransport(shipmentData) {
+	switch (shipmentData.company) {
+		case "Acme Corp":
+			return 12 * 60 * 60 * 1000 // 12 hours in milliseconds
+			break;
+		case "Beta Industries":
+			return 8 * 60 * 60 * 1000 // 8 hours in milliseconds
+			break;
+		case "Gamma Supplies":
+			return 6 * 60 * 60 * 1000 // 6 hours in milliseconds
+			break;
+		default: 18 * 60 * 60 * 1000
+			break;
+	}
+}
+
+function calculateTimeForTransportToBegin(shipmentData) {
+	const originalEtaTimestamp = new Date(shipmentData.original_eta).getTime()
+	const estTravelTimeInMillisecs = shipmentData.estimated_travel_time_in_hours * 60 * 60 * 1000
+
+	return originalEtaTimestamp - estTravelTimeInMillisecs
+}
